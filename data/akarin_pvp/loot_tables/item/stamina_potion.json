@@ -1,0 +1,35 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:potion",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_name",
+                            "entity": "this",
+                            "name": "スタミナポーション"
+                        },
+                        {
+                            "function": "minecraft:set_lore",
+                            "entity": "this",
+                            "lore": [
+                                "スタミナが回復するポーション"
+                            ]
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{CustomPotionColor:16755200,Type:potion}"
+                        },
+                        {
+                            "function": "minecraft:set_potion",
+                            "id": "minecraft:water"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

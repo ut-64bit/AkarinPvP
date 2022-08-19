@@ -1,0 +1,14 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "akarin_pvp:skill_item"
+        }
+      }
+    },
+    "rewards": {
+      "function": "akarin_pvp:craft/skill_item"
+    }
+  }
+  

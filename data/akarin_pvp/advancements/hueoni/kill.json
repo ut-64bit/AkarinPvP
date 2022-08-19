@@ -1,0 +1,38 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "team": "Green"
+                        }
+                    }
+                ],
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "pvp.Playing": 2
+                        }
+                    },
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:player",
+                            "team": "Pink"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "akarin_pvp:core/hueoni/kill"
+    }
+}

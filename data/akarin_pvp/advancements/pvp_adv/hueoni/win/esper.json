@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:nether_star"
+        },
+        "title": "超能力者の鬼ごっこ",
+        "description": "エスパーを使用して逃走成功",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "parent": "akarin_pvp:pvp_adv/hueoni/root",
+    "criteria": {
+        "null": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

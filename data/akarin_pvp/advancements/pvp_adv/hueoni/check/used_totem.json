@@ -1,0 +1,12 @@
+{
+    "criteria": {
+        "totem": {
+            "trigger": "minecraft:used_totem",
+            "conditions": {
+                "item": {
+                    "nbt": "{Type:give_chance}"
+                }
+            }
+        }
+    }
+}

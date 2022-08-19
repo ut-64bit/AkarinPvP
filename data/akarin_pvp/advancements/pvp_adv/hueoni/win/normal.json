@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:iron_axe"
+        },
+        "title": "能力のない鬼",
+        "description": "TA☆DA☆NO鬼を使用して勝利",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "parent": "akarin_pvp:pvp_adv/hueoni/root",
+    "criteria": {
+        "null": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

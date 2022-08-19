@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "akarin_pvp:totem"
+      }
+    }
+  },
+  "rewards": {
+    "function": "akarin_pvp:craft/totem"
+  }
+}

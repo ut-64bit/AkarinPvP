@@ -1,0 +1,29 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "player": [],
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "pvp.Playing": 1
+                        }
+                    },
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:player"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "akarin_pvp:core/gun_pvp/kill"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "team": "Pink"
+                        }
+                    }
+                ],
+                "items": [
+                    {
+                        "nbt": "{Type:trap,Trap:light}"
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "akarin_pvp:core/hueoni/item/trap/light"
+    }
+}

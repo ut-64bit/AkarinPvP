@@ -1,0 +1,23 @@
+{
+    "display": {
+      "icon": {
+        "item": "minecraft:barrier"
+      },
+      "title": {
+        "text": "アイテム縛りの猛者",
+        "color": "aqua"
+      },
+      "description": "TA☆DA☆NO一般人でパン以外のアイテムを使わずに逃走成功",
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": false
+    },
+    "parent": "akarin_pvp:pvp_adv/hueoni/win/people",
+    "criteria": {
+      "null": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }
+  

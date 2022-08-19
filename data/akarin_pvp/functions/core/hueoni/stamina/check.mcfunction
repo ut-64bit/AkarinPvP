@@ -1,0 +1,10 @@
+#> akarin_pvp:core/hueoni/stamina/check
+# @within tag/function akarin_pvp:stamina
+
+#> temp
+# @within function akarin_pvp:core/stamina/*
+    #declare score_holder $stamina
+
+scoreboard players operation $stamina pvp.stamina = @s pvp.stamina
+scoreboard players operation $stamina pvp.stamina *= $100 pvp.temp
+scoreboard players operation $stamina pvp.stamina /= @s pvp.max_stamina

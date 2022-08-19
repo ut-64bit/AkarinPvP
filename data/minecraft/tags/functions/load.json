@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "lib:system/load",
+        "akarin_pvp:load"
+    ]
+}

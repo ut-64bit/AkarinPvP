@@ -1,0 +1,21 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "items": [
+                        "minecraft:cooked_beef",
+                        "minecraft:cooked_chicken",
+                        "minecraft:cooked_mutton",
+                        "minecraft:cooked_porkchop",
+                        "minecraft:cooked_rabbit"
+                    ]
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "akarin_pvp:core/stamina/add/5"
+    }
+}

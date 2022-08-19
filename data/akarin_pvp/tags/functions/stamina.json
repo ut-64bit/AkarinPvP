@@ -1,0 +1,8 @@
+{
+    "values": [
+        "akarin_pvp:core/hueoni/stamina/check",
+        "akarin_pvp:core/hueoni/stamina/actionbar",
+        "akarin_pvp:core/hueoni/stamina/recovery",
+        "akarin_pvp:core/hueoni/stamina/remove"
+    ]
+}
