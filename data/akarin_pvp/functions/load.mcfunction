@@ -96,6 +96,12 @@ scoreboard objectives add pvp.used_glow_powder dropped:glowstone_dust
 # @internal
 scoreboard objectives add pvp.used_red_powder dropped:redstone
 
+#> Player
+# ____
+# トーテム使用回数
+# @internal
+scoreboard objectives add pvp.used_totem dummy
+
     scoreboard objectives add pvp.temp dummy
     scoreboard objectives add pvp.setting dummy
     scoreboard objectives add pvp.Playing dummy

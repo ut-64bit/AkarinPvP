@@ -1,7 +1,7 @@
 #> akarin_pvp:core/hueoni/item/glow_powder/check
 # @within advancement akarin_pvp:hueoni/glow_powder
 
-advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used_special_item
+advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item
 
 # エフェクト
     execute if entity @e[type=item,nbt={Item:{tag:{Type:glow}}}] run function akarin_pvp:core/hueoni/item/glow_powder/effect

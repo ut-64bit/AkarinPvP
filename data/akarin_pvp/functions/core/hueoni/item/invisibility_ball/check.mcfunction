@@ -1,7 +1,7 @@
 #> akarin_pvp:core/hueoni/item/invisibility_ball/check
 # @within advancement akarin_pvp:hueoni/invisibility_ball
 
-advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used_special_item
+advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item
 
 # エフェクト
     execute if entity @e[type=item,nbt={Item:{tag:{Type:invisibility}}}] run function akarin_pvp:core/hueoni/item/invisibility_ball/effect

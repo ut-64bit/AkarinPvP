@@ -4,17 +4,17 @@
             "item": "minecraft:totem_of_undying"
         },
         "title": {
-            "text": "消える寸前の命"
+            "text": "数の暴力"
         },
-        "description": "トーテムを使用する",
+        "description": "トーテムを5個以上使用する",
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false
     },
-    "parent": "akarin_pvp:pvp_adv/hueoni/root",
+    "parent": "akarin_pvp:pvp_adv/hueoni/used_totem",
     "criteria": {
-        "totem": {
+        "totem5": {
             "trigger": "minecraft:impossible"
         }
     }

@@ -1,20 +1,20 @@
 {
     "display": {
       "icon": {
-        "item": "minecraft:barrier"
+        "item": "minecraft:glass_pane"
       },
       "title": {
-        "text": "アイテム縛りの猛者"
+        "text": "希薄じゃない存在感"
       },
-      "description": "TA☆DA☆NO一般人でパン以外のアイテムを使わずに逃走成功",
+      "description": "ハイダーで一回もハイドせずに逃走成功",
       "frame": "challenge",
       "show_toast": true,
       "announce_to_chat": true,
       "hidden": false
     },
-    "parent": "akarin_pvp:pvp_adv/hueoni/win/people",
+    "parent": "akarin_pvp:pvp_adv/hueoni/win/hider",
     "criteria": {
-      "null": {
+      "didnot_hide": {
         "trigger": "minecraft:impossible"
       }
     }

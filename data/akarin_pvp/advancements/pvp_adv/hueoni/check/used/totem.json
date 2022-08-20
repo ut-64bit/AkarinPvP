@@ -1,0 +1,15 @@
+{
+	"criteria": {
+		"totem": {
+			"trigger": "minecraft:used_totem",
+			"conditions": {
+				"item": {
+					"nbt": "{Type:give_chance}"
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "akarin_pvp:core/hueoni/adv/used_totem"
+	}
+}

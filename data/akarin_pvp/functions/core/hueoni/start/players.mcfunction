@@ -5,9 +5,9 @@
 # @private
     #declare tag kill
 
-# 進捗剥奪
-    advancement revoke @s only akarin_pvp:pvp_adv/hueoni/check/used_totem
-    advancement revoke @s only akarin_pvp:pvp_adv/hueoni/check/used_special_item
+# 進捗
+    scoreboard players reset @s pvp.used_totem
+    advancement revoke @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item
 
 # Job
     ## tag
@@ -40,9 +40,9 @@
             execute if entity @s[team=Green] unless entity @s[tag=Assassin] run attribute @s generic.attack_damage base set 20.0
 
         ### 攻撃速度
-            execute if entity @s[team=Green] if entity @s[tag=Normal] run attribute @s generic.attack_speed base set 1.5
+            execute if entity @s[team=Green] if entity @s[tag=Normal] run attribute @s generic.attack_speed base set 1.0
             execute if entity @s[team=Green] if entity @s[tag=Stalker] run attribute @s generic.attack_speed base set 0.5
-            execute if entity @s[team=Green] if entity @s[tag=Assassin] run attribute @s generic.attack_speed base set 3.0
+            execute if entity @s[team=Green] if entity @s[tag=Assassin] run attribute @s generic.attack_speed base set 0.5
 
     ## 逃走者
         ### 移動速度

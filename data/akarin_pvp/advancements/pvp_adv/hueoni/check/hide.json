@@ -1,0 +1,8 @@
+{
+    "criteria": {
+      "hide": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  }
+  

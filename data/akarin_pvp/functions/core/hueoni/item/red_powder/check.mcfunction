@@ -1,7 +1,7 @@
 #> akarin_pvp:core/hueoni/item/red_powder/check
 # @within advancement akarin_pvp:hueoni/red_powder
 
-advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used_special_item
+advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item
 
 # エフェクト
     execute if entity @e[type=item,nbt={Item:{tag:{Type:red}}}] run function akarin_pvp:core/hueoni/item/red_powder/effect
