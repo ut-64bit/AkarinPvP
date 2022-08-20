@@ -4,6 +4,9 @@
 # ワールド全般
     gamerule announceAdvancements true
     difficulty peaceful
+    kill @e[type=armor_stand,tag=sensor]
+    kill @e[type=item]
+    kill @e[type=area_effect_cloud]
 
 # チーム
     team empty Pink

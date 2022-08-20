@@ -103,6 +103,7 @@ scoreboard objectives add pvp.used_red_powder dropped:redstone
 scoreboard objectives add pvp.used_totem dummy
 
     scoreboard objectives add pvp.temp dummy
+    scoreboard objectives add pvp.break dummy
     scoreboard objectives add pvp.setting dummy
     scoreboard objectives add pvp.Playing dummy
 
@@ -145,6 +146,4 @@ scoreboard objectives add pvp.used_totem dummy
     team modify Green seeFriendlyInvisibles true
 
     scoreboard players set $100 pvp.temp 100
-    execute unless score $stamina.cool_time pvp.setting matches -2147483648..2147483647 run scoreboard players set $stamina.cool_time pvp.setting 20
     execute unless score $GunPvP.Finish pvp.temp matches -2147483648..2147483647 run scoreboard players set $GunPvP.Finish pvp.temp 20
-    execute unless score $HueOni.Finish pvp.setting matches -2147483648..2147483647 run scoreboard players set $HueOni.Finish pvp.setting 120

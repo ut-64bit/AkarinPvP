@@ -20,7 +20,12 @@
     execute if entity @s[tag=Assassin] at @s if data entity @s SelectedItem{id:"minecraft:iron_sword"} if entity @a[team=Pink,distance=..2] run effect give @s strength 4 9 true
 
 # ハイダー
-    execute if entity @s[tag=Hider] if score @s lib.sneak_time matches 60.. at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17,Amplifier:8b,Duration:2,ShowParticles:0b}]}
+    execute if entity @s[tag=Hider] if score @s lib.sneak_time matches 60.. if entity @e[tag=lib.pos_check,distance=..0.005] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17,Amplifier:8b,Duration:2,ShowParticles:0b}]}
+
+# マグロ
+    execute if entity @s[tag=Maguro] if entity @e[tag=lib.pos_check,distance=..0.005] run scoreboard players add @s pvp.break 1
+    execute if entity @s[tag=Maguro] unless entity @e[tag=lib.pos_check,distance=..0.005] run scoreboard players set @s pvp.break 0
+    execute if entity @s[tag=Maguro] if entity @e[tag=lib.pos_check,distance=..0.005] if score @s pvp.break matches 60.. run function akarin_pvp:core/hueoni/main/maguro
 
 # 発光
     execute if score $timer pvp.timer matches ..30 if entity @s[team=Pink] run effect give @s glowing 2 0 false

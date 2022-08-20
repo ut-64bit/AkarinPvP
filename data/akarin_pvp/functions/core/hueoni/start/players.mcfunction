@@ -15,6 +15,8 @@
         tag @s remove Esper
         tag @s remove Hider
         tag @s remove Panya
+        tag @s remove Onlooker
+        tag @s remove Maguro
         tag @s remove Normal
         tag @s remove Stalker
         tag @s remove Assassin
@@ -24,6 +26,8 @@
         execute if entity @s[team=Pink] if score @s pvp.job matches 2 run tag @s add Esper
         execute if entity @s[team=Pink] if score @s pvp.job matches 3 run tag @s add Hider
         execute if entity @s[team=Pink] if score @s pvp.job matches 4 run tag @s add Panya
+        execute if entity @s[team=Pink] if score @s pvp.job matches 5 run tag @s add Onlooker
+        execute if entity @s[team=Pink] if score @s pvp.job matches 6 run tag @s add Maguro
 
         execute if entity @s[team=Green] if score @s pvp.job matches 1 run tag @s add Normal
         execute if entity @s[team=Green] if score @s pvp.job matches 2 run tag @s add Stalker
@@ -50,6 +54,8 @@
             execute if entity @s[team=Pink] if entity @s[tag=Esper] run attribute @s generic.movement_speed base set 0.09
             execute if entity @s[team=Pink] if entity @s[tag=Hider] run attribute @s generic.movement_speed base set 0.1
             execute if entity @s[team=Pink] if entity @s[tag=Panya] run attribute @s generic.movement_speed base set 0.1
+            execute if entity @s[team=Pink] if entity @s[tag=Onlooker] run attribute @s generic.movement_speed base set 0.1
+            execute if entity @s[team=Pink] if entity @s[tag=Maguro] run attribute @s generic.movement_speed base set 0.11
 
 # 開始処理
     ## リス地
@@ -70,6 +76,7 @@
     ## アイテム
         execute if entity @s[tag=Assassin] run give @s minecraft:iron_sword{display: {Name: '{"text":"ナイフ","color":"red"}', Lore: ['"アサシン専用武器"', '"アサシン唯一無二の攻撃手段"']}, Unbreakable: 1, HideFlags: 7, AttributeModifiers: [{AttributeName: "generic.attack_speed", Amount: 5, Operation: 0, Slot: "mainhand", UUID: [I; 797627813, -210550115, 687549437, -756019680]}], Enchantments: [{id: "unbreaking"}]}
         execute if entity @s[team=Pink] run give @s minecraft:tripwire_hook{Type: key, display: {Name: '"鍵"', Lore: ['{"text":"チェストを開けるための鍵"}']}, Enchantments: [{id: "minecraft:unbreaking"}], HideFlags: 1}
+        execute if entity @s[tag=Onlooker] run give @s minecraft:armor_stand{display: {Name: '"カメラ"', Lore: ['{"text":"設置した場所の付近にいるプレイヤーを発光させる","color":"dark_purple"}']}, EntityTag: {Tags: ["sensor"], DisabledSlots: 4096, Invisible: 1b, NoBasePlate: 1b, ArmorItems: [{}, {}, {}, {id: "minecraft:player_head", Count: 1b, tag: {SkullOwner: {Id: [I; -537306653, -1613936669, -1969863344, 758743507], Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ZkMzNiZjNlMGE3Mzg1N2JlNzNhNTA4NmQyYTYyYzM5Nzg3ZGRhYTM4NTA0NjE1NWZjNjgxNTNjODJhNzZmYiJ9fX0="}]}}}}]}} 3
         execute if entity @s[team=Pink] run scoreboard players operation @s pvp.stamina = @s pvp.max_stamina
         execute if entity @s[team=Pink] run scoreboard players set @s pvp.cool 0
         execute if entity @s[team=Pink] run scoreboard players set @s pvp.stamina_s 0
@@ -80,6 +87,10 @@
         execute if entity @s[tag=Assassin] run function akarin_pvp:core/hueoni/team/explanation/assassin
         execute if entity @s[tag=Panya] run function akarin_pvp:core/hueoni/team/explanation/panya
         execute if entity @s[tag=Stalker] run function akarin_pvp:core/hueoni/team/explanation/stalker
+        execute if entity @s[tag=Onlooker] run function akarin_pvp:core/hueoni/team/explanation/onlooker
+        execute if entity @s[tag=Maguro] run function akarin_pvp:core/hueoni/team/explanation/maguro
+
+    scoreboard players reset * pvp.break
 
     trigger pvp.job_select set 0
     scoreboard players set @s pvp.job_select 0

@@ -3,11 +3,16 @@
 
 # スコアボード
     ## short_sneak
+        execute as @a if entity @s[tag=lib.short_sneak] run tag @s remove lib.short_sneak
         execute unless predicate lib:flag/sneaking if score @s lib.sneak_time <= $lib.short_sneak lib.setting run function #minecraft:short_sneak
 
     ## リセット
         execute unless predicate lib:flag/sneaking if score @s lib.sneak_time matches 1.. run scoreboard players set @s lib.sneak_time 0
         execute unless predicate lib:flag/sprinting if score @s lib.sprint_distance matches 1.. run scoreboard players set @s lib.sprint_distance 0
+
+# Posチェック
+    execute as @e[type=marker,tag=lib.pos_check] run kill @s
+    summon marker ~ ~ ~ {Tags:["lib.pos_check"]}
 
 # function実行
     function #minecraft:player_tick

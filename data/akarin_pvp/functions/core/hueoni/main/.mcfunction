@@ -13,6 +13,9 @@
     bossbar set akarin_pvp:timer name [{"text": "残り時間: ","color": "red"},{"score":{"name": "$timer","objective": "pvp.timer"}},"s"]
     execute if score $timer pvp.timerT matches 0 run function akarin_pvp:core/hueoni/main/chest/check
 
+# sensor
+    execute as @e[type=armor_stand,tag=sensor] at @s run function akarin_pvp:core/hueoni/item/sensor/main
+
 # Player
     execute as @a if score @s pvp.Playing matches 2 run function akarin_pvp:core/hueoni/main/player
 

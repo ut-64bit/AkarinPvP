@@ -8,3 +8,5 @@ scoreboard players enable @s pvp.job_select
         tag @s remove Esper
         tag @s remove Hider
         tag @s remove Panya
+        tag @s remove Onlooker
+        tag @s remove Maguro

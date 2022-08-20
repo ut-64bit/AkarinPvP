@@ -8,7 +8,7 @@
     gamerule showDeathMessages false
     execute as @a if score @s pvp.Playing matches 2 at @s run function akarin_pvp:core/hueoni/start/players
     gamerule showDeathMessages true
-bossbar set akarin_pvp:timer players @a
+    bossbar set akarin_pvp:timer players @a
 
 # タイマー
     scoreboard players operation $timer pvp.timer = $HueOni.Finish pvp.setting
@@ -22,5 +22,6 @@ bossbar set akarin_pvp:timer players @a
     execute at @e[tag=set_chest] run item replace block ~ ~ ~ container.13 with air
     scoreboard players reset * pvp.killranking
     
-    execute unless entity @a[scores={pvp.Playing=2},team=Pink] run function akarin_pvp:core/hueoni/finish
-    execute if entity @a[scores={pvp.Playing=2},team=Pink] unless entity @a[scores={pvp.Playing=2},team=Green] run function akarin_pvp:core/hueoni/finish
+    execute unless entity @a[scores={pvp.Playing=2},team=Pink] run function akarin_pvp:core/hueoni/finish/
+    execute if entity @a[scores={pvp.Playing=2},team=Pink] unless entity @a[scores={pvp.Playing=2},team=Green] run function akarin_pvp:core/hueoni/finish/
+    function akarin_pvp:core/hueoni/main/chest/

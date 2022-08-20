@@ -31,6 +31,10 @@
 # @public
     #declare score_holder $lib.ver
 
+#> Private
+# @public
+    #declare tag lib.pos_check
+
 # UUID
 ## 127,0,0,0
 ## 127,0,0,1

@@ -12,6 +12,7 @@ execute if score $stamina pvp.stamina matches 21..30 run data merge storage acti
 execute if score $stamina pvp.stamina matches 11..20 run data merge storage actionbar {text:"|■■□□□□□□□□|"}
 execute if score $stamina pvp.stamina matches 1..10 run data merge storage actionbar {text:"|■□□□□□□□□□|"}
 execute if score $stamina pvp.stamina matches ..0 run data merge storage actionbar {text:"|□□□□□□□□□□|"}
+execute if score @s pvp.max_stamina matches 0 run data merge storage actionbar {text:"| ∞ |"}
 
 execute if score $stamina pvp.stamina matches 1.. if predicate lib:flag/sprinting run effect give @s speed 1 0 true
 execute if score $stamina pvp.stamina matches ..50 if predicate lib:flag/sprinting run effect give @s hunger 1 1 true
