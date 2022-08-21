@@ -1,6 +1,4 @@
 {
     "replace": false,
-    "values": [
-        "lib:system/short_sneak"
-    ]
+    "values": []
 }

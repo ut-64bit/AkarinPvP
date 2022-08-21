@@ -5,6 +5,6 @@
     }
   },
   "rewards": {
-    "function": "lib:system/player_tick"
+    "function": "lib:core/player/tick"
   }
 }

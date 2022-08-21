@@ -106,6 +106,7 @@ scoreboard objectives add pvp.used_totem dummy
     scoreboard objectives add pvp.break dummy
     scoreboard objectives add pvp.setting dummy
     scoreboard objectives add pvp.Playing dummy
+    scoreboard objectives add pvp.health_plus dummy
 
 # ボスバー作成
     bossbar add akarin_pvp:timer "Timer"
