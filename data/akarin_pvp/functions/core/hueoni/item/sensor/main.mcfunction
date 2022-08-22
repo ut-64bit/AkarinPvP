@@ -1,14 +1,14 @@
 #> akarin_pvp:core/hueoni/item/sensor/main
 # @within function akarin_pvp:core/hueoni/main/
 
-#> temp
-# @private
-    #declare tag THIS
+#> Temp
+# @within function akarin_pvp:core/hueoni/item/sensor/**
+    #declare tag this
 
-tag @s add THIS
+tag @s add this
 
-execute as @a[distance=..6,predicate=!lib:effect/invisibility,sort=nearest,limit=1] run tp @e[tag=THIS] ^ ^ ^ facing entity @s eyes
+execute as @a[predicate=!lib:effect/invisibility,distance=..6,sort=nearest,limit=1] run tp @e[tag=this] ^ ^ ^ facing entity @s eyes
 execute as @a if entity @s[distance=..5] run function akarin_pvp:core/hueoni/item/sensor/effect
-execute if score @s pvp.break matches 5.. run function akarin_pvp:core/hueoni/item/sensor/break
+execute if score @s PvP.Break matches 5.. run function akarin_pvp:core/hueoni/item/sensor/break
 
-tag @s remove THIS
+tag @s remove this

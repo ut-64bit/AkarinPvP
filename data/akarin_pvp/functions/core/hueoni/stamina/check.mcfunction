@@ -5,7 +5,7 @@
 # @within function akarin_pvp:core/stamina/*
     #declare score_holder $stamina
 
-scoreboard players operation $stamina pvp.stamina = @s pvp.stamina
-scoreboard players operation $stamina pvp.stamina *= $100 pvp.temp
-scoreboard players operation $stamina pvp.stamina /= @s pvp.max_stamina
-execute if score @s pvp.max_stamina matches 0 run scoreboard players set $stamina pvp.stamina 100
+scoreboard players operation $stamina PvP.Stamina = @s PvP.Stamina
+scoreboard players operation $stamina PvP.Stamina *= $100 PvP.Temp
+scoreboard players operation $stamina PvP.Stamina /= @s PvP.MaxStamina
+execute if score @s PvP.MaxStamina matches 0 run scoreboard players set $stamina PvP.Stamina 100

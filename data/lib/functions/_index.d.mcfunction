@@ -9,9 +9,13 @@
     #declare item_modifier append_nbt
     #declare item_modifier merge_nbt
     #declare item_modifier replace_nbt
-    #declare tag lib.pos_check
-    #declare tag lib.short_sneak
+    #declare tag Temp.PosCheck
+    #declare tag Temp.ShortSneak
     #declare score_holder $lib.random
+
+#> UUID
+# @internal
+    #declare entity 7F-22-8-22-0 疑似乱数生成用AEC
 
 #> Setting
 # @public

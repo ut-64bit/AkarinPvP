@@ -23,7 +23,7 @@
                         "condition": "minecraft:entity_scores",
                         "entity": "this",
                         "scores": {
-                            "pvp.Playing": 2
+                            "PvP.Playing": 2
                         }
                     }
                 ]

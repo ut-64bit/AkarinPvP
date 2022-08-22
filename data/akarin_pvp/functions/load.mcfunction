@@ -4,111 +4,160 @@
 # スコア作成
 ## GunPvP
 
-#> Player
+#> 
+# Player
 # ____
 # プレイヤーのKill数判定用
 # @internal
-scoreboard objectives add pvp.death deathCount
+scoreboard objectives add PvP.Death deathCount
 
-#> Player
+#> 
+# Player
 # ____
 # キルランキング
 # @internal
-scoreboard objectives add pvp.killranking killed:player {"text":"キルランキング","color": "gold"}
+scoreboard objectives add PvP.KillRanking killed:player {"text":"キルランキング","color": "gold"}
 
 ## 増え鬼
 
-#> Player
+#> 
+# Player
 # ____
 # プレイヤーのスタミナ
 # @internal
-scoreboard objectives add pvp.stamina dummy
+scoreboard objectives add PvP.Stamina dummy
 
-#> Player
+#> 
+# Player
 # ____
 # プレイヤーのスタミナの最大値
 # @internal
-scoreboard objectives add pvp.max_stamina dummy
+scoreboard objectives add PvP.MaxStamina dummy
 
-#> Temp
+#> 
+# Temp
 # ____
 # スタミナの消費カウント
 # @internal
-scoreboard objectives add pvp.stamina_s dummy
+scoreboard objectives add PvP.Temp.Stamina dummy
 
-#> Temp
+#> 
+# Temp
 # ____
 # スタミナの回復カウント
 # @internal
-scoreboard objectives add pvp.cool dummy
+scoreboard objectives add PvP.Stamina.CoolTime dummy
 
-#> Trigger
+#> 
+# Trigger
 # ____
 # Job選択
 # @internal
-scoreboard objectives add pvp.job_select trigger
+scoreboard objectives add PvP.JobSelect trigger
 
-#> Player
+#> 
+# Player
 # ____
 # Job
 # @internal
-scoreboard objectives add pvp.job dummy
+scoreboard objectives add PvP.Job dummy
 
-#> World
+#> 
+# World
 # ____
 # タイマー
 # @internal
-scoreboard objectives add pvp.timer dummy
+scoreboard objectives add PvP.Timer dummy
 
-#> World
+#> 
+# World
 # ____
 # tickタイマー
 # @internal
-scoreboard objectives add pvp.timerT dummy
+scoreboard objectives add PvP.TickTimer dummy
 
-#> Player
+#> 
+# Player
 # ____
 # スプラッシュポーションの使用判定
 # @internal
-scoreboard objectives add pvp.used_splash_potion used:splash_potion
+scoreboard objectives add PvP.Used.SplashPotion used:splash_potion
 
-#> Player
+#> 
+# Player
 # ____
 # 残留ポーションの使用判定
 # @internal
-scoreboard objectives add pvp.used_lingering_potion used:lingering_potion
+scoreboard objectives add PvP.Used.LingeringPotion used:lingering_potion
 
-#> Player
+#> 
+# Player
 # ____
 # 透明化ボールの使用判定
 # @internal
-scoreboard objectives add pvp.used_invisibility_ball dropped:slime_ball
+scoreboard objectives add PvP.Used.InvisibilityBall dropped:slime_ball
 
-#> Player
+#> 
+# Player
 # ____
 # 光る粉の使用判定
 # @internal
-scoreboard objectives add pvp.used_glow_powder dropped:glowstone_dust
+scoreboard objectives add PvP.Used.GlowPowder dropped:glowstone_dust
 
-#> Player
+#> 
+# Player
 # ____
 # 赤い粉の使用判定
 # @internal
-scoreboard objectives add pvp.used_red_powder dropped:redstone
+scoreboard objectives add PvP.Used.RedPowder dropped:redstone
 
-#> Player
+#> 
+# Player
 # ____
 # トーテム使用回数
 # @internal
-scoreboard objectives add pvp.used_totem dummy
+scoreboard objectives add PvP.Used.Totem dummy
 
-    scoreboard objectives add pvp.temp dummy
-    scoreboard objectives add pvp.break dummy
-    scoreboard objectives add pvp.setting dummy
-    scoreboard objectives add pvp.Playing dummy
-    scoreboard objectives add pvp.health_plus dummy
+#> 
+# Temp
+# ____
+# Temp
+# @internal
+scoreboard objectives add PvP.Temp dummy
+
+#> 
+# Player
+# ____
+# マグロ,カメラの破壊ゲージ
+# @internal
+scoreboard objectives add PvP.Break dummy
+
+#> 
+# Setting
+# ____
+# 設定
+# @internal
+scoreboard objectives add PvP.Setting dummy
+
+#> 
+# Player
+# ____
+# Play中のゲーム
+# @internal
+scoreboard objectives add PvP.Playing dummy
+
+#> 
+# Player
+# ____
+# 追加体力
+# @internal
+scoreboard objectives add PvP.HealthPlus dummy
 
 # ボスバー作成
+
+#> 
+# Bossbar
+# @internal
     bossbar add akarin_pvp:timer "Timer"
     bossbar add akarin_pvp:red "Red"
     bossbar add akarin_pvp:blue "Blue"
@@ -146,5 +195,6 @@ scoreboard objectives add pvp.used_totem dummy
     team modify Green nametagVisibility always
     team modify Green seeFriendlyInvisibles true
 
-    scoreboard players set $100 pvp.temp 100
-    execute unless score $GunPvP.Finish pvp.temp matches -2147483648..2147483647 run scoreboard players set $GunPvP.Finish pvp.temp 20
+# スコア設定
+    scoreboard players set $100 PvP.Temp 100
+    execute unless score $GunPvP.Finish PvP.Temp matches -2147483648..2147483647 run scoreboard players set $GunPvP.Finish PvP.Temp 20

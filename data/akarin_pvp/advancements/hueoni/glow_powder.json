@@ -8,8 +8,8 @@
               "condition": "minecraft:entity_scores",
               "entity": "this",
               "scores": {
-                "pvp.Playing": 2,
-                "pvp.used_glow_powder": {
+                "PvP.Playing": 2,
+                "PvP.Used.GlowPowder": {
                   "min": 1
                 }
               }

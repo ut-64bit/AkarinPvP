@@ -2,5 +2,5 @@
 # @within function akarin_pvp:tick
 
 team join Pink @s
-scoreboard players enable @s pvp.job_select
-scoreboard players set @s pvp.job_select 1
+scoreboard players enable @s PvP.JobSelect
+scoreboard players set @s PvP.JobSelect 1

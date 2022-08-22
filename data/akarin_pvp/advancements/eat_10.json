@@ -13,6 +13,6 @@
         }
     },
     "rewards": {
-        "function": "akarin_pvp:core/stamina/add/10"
+        "function": "akarin_pvp:core/hueoni/stamina/add/10"
     }
 }
