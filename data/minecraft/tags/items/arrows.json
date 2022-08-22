@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "air"
+    "gold_ingot",
+    "arrow",
+    "bow"
   ]
 }
