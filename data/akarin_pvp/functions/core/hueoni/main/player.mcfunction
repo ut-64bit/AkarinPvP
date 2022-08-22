@@ -6,11 +6,11 @@
 
 # 逃走者
     execute if entity @s[team=Pink] run function #akarin_pvp:stamina
-    execute store result score @s pvp.health_plus run data get entity @s AbsorptionAmount 0.2
-    execute if score @s pvp.health_plus matches 1.. run particle dust 1 1 0 1 ~1 ~ ~ 0 0 0 0 1 normal @a
-    execute if score @s pvp.health_plus matches 2.. run particle dust 1 1 0 1 ~ ~ ~1 0 0 0 0 1 normal @a
-    execute if score @s pvp.health_plus matches 3.. run particle dust 1 1 0 1 ~-1 ~ ~ 0 0 0 0 1 normal @a
-    execute if score @s pvp.health_plus matches 4.. run particle dust 1 1 0 1 ~ ~ ~-1 0 0 0 0 1 normal @a
+    execute store result score @s PvP.HealthPlus run data get entity @s AbsorptionAmount 0.2
+    execute if score @s PvP.HealthPlus matches 1.. run particle dust 1 1 0 1 ~1 ~ ~ 0 0 0 0 1 normal @a
+    execute if score @s PvP.HealthPlus matches 2.. run particle dust 1 1 0 1 ~ ~ ~1 0 0 0 0 1 normal @a
+    execute if score @s PvP.HealthPlus matches 3.. run particle dust 1 1 0 1 ~-1 ~ ~ 0 0 0 0 1 normal @a
+    execute if score @s PvP.HealthPlus matches 4.. run particle dust 1 1 0 1 ~ ~ ~-1 0 0 0 0 1 normal @a
 
 # エスパー
     execute if entity @s[tag=Esper] at @s anchored eyes positioned ^ ^ ^ facing entity @a[team=Green,distance=..16] eyes run particle soul_fire_flame ^ ^ ^1 0 0 0 0 1 normal @s
@@ -25,13 +25,13 @@
     execute if entity @s[tag=Assassin] at @s if data entity @s SelectedItem{id:"minecraft:iron_sword"} if entity @a[team=Pink,distance=..2] run effect give @s strength 4 9 true
 
 # ハイダー
-    execute if entity @s[tag=Hider] if score @s lib.sneak_time matches 60.. if entity @e[tag=lib.pos_check,distance=..0.05] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17,Amplifier:8b,Duration:2,ShowParticles:0b}]}
+    execute if entity @s[tag=Hider] if score @s SneakTime matches 60.. if entity @e[tag=Temp.PosCheck,distance=..0.05] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17b,Amplifier:8b,Duration:2,ShowParticles:0b}]}
 
 # マグロ
-    execute if entity @s[tag=Maguro] if entity @e[tag=lib.pos_check,distance=..0.1] run scoreboard players add @s pvp.break 1
-    execute if entity @s[tag=Maguro] if entity @e[tag=lib.pos_check,distance=..0.1] run playsound block.note_block.bell player @s ~ ~ ~ 1 1.1
-    execute if entity @s[tag=Maguro] unless entity @e[tag=lib.pos_check,distance=..0.1] run scoreboard players set @s pvp.break 0
-    execute if entity @s[tag=Maguro] if entity @e[tag=lib.pos_check,distance=..0.1] if score @s pvp.break matches 60.. run function akarin_pvp:core/hueoni/main/maguro
+    execute if entity @s[tag=Maguro] if entity @e[tag=Temp.PosCheck,distance=..0.1] run scoreboard players add @s PvP.Break 1
+    execute if entity @s[tag=Maguro] if entity @e[tag=Temp.PosCheck,distance=..0.1] run playsound block.note_block.bell player @s ~ ~ ~ 1 1.1
+    execute if entity @s[tag=Maguro] unless entity @e[tag=Temp.PosCheck,distance=..0.1] run scoreboard players set @s PvP.Break 0
+    execute if entity @s[tag=Maguro] if entity @e[tag=Temp.PosCheck,distance=..0.1] if score @s PvP.Break matches 60.. run function akarin_pvp:core/hueoni/main/maguro
 
 # 発光
-    execute if score $timer pvp.timer matches ..30 if entity @s[team=Pink] run effect give @s glowing 2 0 false
+    execute if score $timer PvP.Timer matches ..30 if entity @s[team=Pink] run effect give @s glowing 2 0 false

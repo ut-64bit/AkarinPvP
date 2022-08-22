@@ -1,12 +1,12 @@
 #> akarin_pvp:core/hueoni/start/players
 # @within function akarin_pvp:core/hueoni/start/
 
-#> temp
+#> Temp
 # @private
-    #declare tag kill
+    #declare tag Kill
 
 # 進捗
-    scoreboard players reset @s pvp.used_totem
+    scoreboard players reset @s PvP.Used.Totem
     advancement revoke @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item
 
 # Job
@@ -22,16 +22,16 @@
         tag @s remove Assassin
 
     ## 変更できないように
-        execute if entity @s[team=Pink] if score @s pvp.job matches 1 run tag @s add People
-        execute if entity @s[team=Pink] if score @s pvp.job matches 2 run tag @s add Esper
-        execute if entity @s[team=Pink] if score @s pvp.job matches 3 run tag @s add Hider
-        execute if entity @s[team=Pink] if score @s pvp.job matches 4 run tag @s add Panya
-        execute if entity @s[team=Pink] if score @s pvp.job matches 5 run tag @s add Onlooker
-        execute if entity @s[team=Pink] if score @s pvp.job matches 6 run tag @s add Maguro
+        execute if entity @s[team=Pink] if score @s PvP.Job matches 1 run tag @s add People
+        execute if entity @s[team=Pink] if score @s PvP.Job matches 2 run tag @s add Esper
+        execute if entity @s[team=Pink] if score @s PvP.Job matches 3 run tag @s add Hider
+        execute if entity @s[team=Pink] if score @s PvP.Job matches 4 run tag @s add Panya
+        execute if entity @s[team=Pink] if score @s PvP.Job matches 5 run tag @s add Onlooker
+        execute if entity @s[team=Pink] if score @s PvP.Job matches 6 run tag @s add Maguro
 
-        execute if entity @s[team=Green] if score @s pvp.job matches 1 run tag @s add Normal
-        execute if entity @s[team=Green] if score @s pvp.job matches 2 run tag @s add Stalker
-        execute if entity @s[team=Green] if score @s pvp.job matches 3 run tag @s add Assassin
+        execute if entity @s[team=Green] if score @s PvP.Job matches 1 run tag @s add Normal
+        execute if entity @s[team=Green] if score @s PvP.Job matches 2 run tag @s add Stalker
+        execute if entity @s[team=Green] if score @s PvP.Job matches 3 run tag @s add Assassin
 
 # ステータス
     ## 鬼
@@ -67,19 +67,20 @@
         title @s title "鬼ごっこ開始!"
         effect clear @s
 
-    ## kill
-        execute if block ~ ~-1 ~ minecraft:crying_obsidian run tag @s add kill
-        execute if entity @s[tag=kill] run tellraw @a [{"selector":"@s"},{"text":"は初期地点にいたので死んでしまった!","color": "white"}]
-        execute if entity @s[tag=kill] run kill @s
-        execute if entity @s[tag=kill] run tag @s remove kill
+    ## Kill
+        execute if block ~ ~-1 ~ minecraft:crying_obsidian run tag @s add Kill
+        execute if entity @s[tag=Kill] run tellraw @a [{"selector":"@s"},{"text":"は初期地点にいたので死んでしまった!","color": "white"}]
+        execute if entity @s[tag=Kill] run kill @s
+        execute if entity @s[tag=Kill] run tag @s remove Kill
 
     ## アイテム
-        execute if entity @s[tag=Assassin] run give @s minecraft:iron_sword{display: {Name: '{"text":"ナイフ","color":"red"}', Lore: ['"アサシン専用武器"', '"アサシン唯一無二の攻撃手段"']}, Unbreakable: 1, HideFlags: 7, AttributeModifiers: [{AttributeName: "generic.attack_speed", Amount: 5, Operation: 0, Slot: "mainhand", UUID: [I; 797627813, -210550115, 687549437, -756019680]}], Enchantments: [{id: "unbreaking"}]}
-        execute if entity @s[team=Pink] run give @s minecraft:tripwire_hook{Type: key, display: {Name: '"鍵"', Lore: ['{"text":"チェストを開けるための鍵"}']}, Enchantments: [{id: "minecraft:unbreaking"}], HideFlags: 1}
-        execute if entity @s[tag=Onlooker] run give @s minecraft:armor_stand{display: {Name: '"カメラ"', Lore: ['{"text":"設置した場所の付近にいるプレイヤーを発光させる","color":"dark_purple"}']}, EntityTag: {Tags: ["sensor"], DisabledSlots: 4096, Invisible: 1b, NoBasePlate: 1b, ArmorItems: [{}, {}, {}, {id: "minecraft:player_head", Count: 1b, tag: {SkullOwner: {Id: [I; -537306653, -1613936669, -1969863344, 758743507], Properties: {textures: [{Value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ZkMzNiZjNlMGE3Mzg1N2JlNzNhNTA4NmQyYTYyYzM5Nzg3ZGRhYTM4NTA0NjE1NWZjNjgxNTNjODJhNzZmYiJ9fX0="}]}}}}]}} 3
-        execute if entity @s[team=Pink] run scoreboard players operation @s pvp.stamina = @s pvp.max_stamina
-        execute if entity @s[team=Pink] run scoreboard players set @s pvp.cool 0
-        execute if entity @s[team=Pink] run scoreboard players set @s pvp.stamina_s 0
+        execute if entity @s[tag=Assassin] run give @s minecraft:iron_sword{display: {Name: '{"text":"ナイフ","color":"red"}', Lore: ['"アサシン専用武器"', '"アサシン唯一無二の攻撃手段"']}, Unbreakable: 1b, HideFlags: 7, AttributeModifiers: [{AttributeName: "generic.attack_speed", Amount: 5d, Operation: 0, Slot: "mainhand", UUID: [I; 797627813, -210550115, 687549437, -756019680]}], Enchantments: [{id: "unbreaking"}]}
+        execute if entity @s[team=Pink] run give @s minecraft:tripwire_hook{ASP:{Type: "key"}, display: {Name: '"鍵"', Lore: ['{"text":"チェストを開けるための鍵"}']}, Enchantments: [{id: "minecraft:unbreaking"}], HideFlags: 1}
+        execute if entity @s[tag=Onlooker] run give @s minecraft:armor_stand{ASP:{Type:"camera",DropSet:{Tags:["Sensor"],DisabledSlots:4096,Invisible:1b,NoBasePlate:1b,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I; -537306653, -1613936669, -1969863344, 758743507],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ZkMzNiZjNlMGE3Mzg1N2JlNzNhNTA4NmQyYTYyYzM5Nzg3ZGRhYTM4NTA0NjE1NWZjNjgxNTNjODJhNzZmYiJ9fX0="}]}}}}]}},display:{Name:'"カメラ"',Lore:['{"text":"設置した場所の付近にいるプレイヤーを発光させる","color":"dark_purple"}']}} 3
+
+        execute if entity @s[team=Pink] run scoreboard players operation @s PvP.Stamina = @s PvP.MaxStamina
+        execute if entity @s[team=Pink] run scoreboard players set @s PvP.Stamina.CoolTime 0
+        execute if entity @s[team=Pink] run scoreboard players set @s PvP.Temp.Stamina 0
 
     ## Job説明
         execute if entity @s[tag=Esper] run function akarin_pvp:core/hueoni/team/explanation/esper
@@ -90,7 +91,7 @@
         execute if entity @s[tag=Onlooker] run function akarin_pvp:core/hueoni/team/explanation/onlooker
         execute if entity @s[tag=Maguro] run function akarin_pvp:core/hueoni/team/explanation/maguro
 
-    scoreboard players reset * pvp.break
+    scoreboard players reset * PvP.Break
 
-    trigger pvp.job_select set 0
-    scoreboard players set @s pvp.job_select 0
+    trigger PvP.JobSelect set 0
+    scoreboard players set @s PvP.JobSelect 0

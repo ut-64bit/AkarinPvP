@@ -8,8 +8,8 @@
                         "condition": "minecraft:entity_scores",
                         "entity": "this",
                         "scores": {
-                            "pvp.Playing": 2,
-                            "pvp.used_invisibility_ball": {
+                            "PvP.Playing": 2,
+                            "PvP.Used.InvisibilityBall": {
                                 "min": 1
                             }
                         }

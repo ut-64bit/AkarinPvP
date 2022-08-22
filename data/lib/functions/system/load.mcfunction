@@ -3,33 +3,27 @@
 
 # スコアボード作成
 
-#> Player: 
-# スニーク時間[tick]
+#> 
+# Player
+# - スニーク時間[tick]
 # @public
-    scoreboard objectives add lib.sneak_time custom:sneak_time
+scoreboard objectives add SneakTime custom:sneak_time
 
-#> Player: 
-# 走行距離[cm]
+#> 
+# Player 
+# - 走行距離[cm]
 # @public
-    scoreboard objectives add lib.sprint_distance custom:sprint_one_cm
+scoreboard objectives add SprintDistance custom:sprint_one_cm
 
-#> Player: 
-# Health
-# @public
-    scoreboard objectives add lib.health health
-
-#> Player: 
-# Food
-# @public
-    scoreboard objectives add lib.food food
-
-#> Setting
+#> 
+# Setting
 # @internal
-    scoreboard objectives add lib.setting dummy
+scoreboard objectives add Library.Setting dummy
 
-#> Temp
+#> 
+# Temp
 # @public
-    scoreboard objectives add lib.temp dummy
+scoreboard objectives add Library.Temp dummy
 
-    ## other
-        execute unless score $lib.ver lib.temp matches 100 run function lib:system/init
+## other
+    execute unless score $lib.ver Library.Temp matches 110 run function lib:system/init
