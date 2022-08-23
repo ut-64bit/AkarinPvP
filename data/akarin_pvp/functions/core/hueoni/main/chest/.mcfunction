@@ -4,7 +4,7 @@
 #   akarin_pvp:core/hueoni/start/
 
 # アイテム補充
-    execute as @e[type=armor_stand,tag=SetChest] run tag @s add SetItem
+    execute as @e[type=armor_stand,tag=set_chest] run tag @s add SetItem
     execute as @e[type=armor_stand,tag=SetItem,sort=random,limit=20] at @s run item replace block ~ ~ ~ container.13 with bread 2
     execute as @e[type=armor_stand,tag=SetItem,sort=random,limit=5] at @s run function akarin_pvp:core/hueoni/main/chest/set_glow_potion
     execute as @e[type=armor_stand,tag=SetItem,sort=random,limit=5] at @s run function akarin_pvp:core/hueoni/main/chest/set_potion

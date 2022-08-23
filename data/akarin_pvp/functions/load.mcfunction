@@ -115,7 +115,7 @@ scoreboard objectives add PvP.Used.RedPowder dropped:redstone
 # Player
 # ____
 # トーテム使用回数
-# @internal
+# @public
 scoreboard objectives add PvP.Used.Totem dummy
 
 #> 
