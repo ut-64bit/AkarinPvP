@@ -26,4 +26,4 @@ scoreboard objectives add Library.Setting dummy
 scoreboard objectives add Library.Temp dummy
 
 ## other
-    execute unless score $lib.ver Library.Temp matches 110 run function lib:system/init
+    execute unless score $lib.ver Library.Temp matches 111 run function lib:system/init
