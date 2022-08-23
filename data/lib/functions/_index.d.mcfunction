@@ -11,6 +11,7 @@
     #declare item_modifier replace_nbt
     #declare tag Temp.PosCheck
     #declare tag Temp.ShortSneak
+    #declare tag Move
     #declare score_holder $lib.random
 
 #> UUID

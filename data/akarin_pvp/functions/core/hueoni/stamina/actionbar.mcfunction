@@ -23,7 +23,7 @@
     execute if score $stamina PvP.Stamina matches ..50 run effect give @s hunger 1 0 true
     execute if score $stamina PvP.Stamina matches ..20 run effect give @s slowness 1 1 true
 
-    title @s actionbar {"nbt":"text","storage":"actionbar","color":"gold"}
+    title @s actionbar {"nbt":"Text","storage":"actionbar","color":"gold"}
     execute if entity @s[tag=Esper] at @s if entity @a[team=Green,distance=..36] run title @s actionbar [{"text":"| 近くに鬼の気配がする... |   ","color":"red"},{"nbt":"Text","storage":"actionbar","color":"gold"}]
 
     data remove storage actionbar Text

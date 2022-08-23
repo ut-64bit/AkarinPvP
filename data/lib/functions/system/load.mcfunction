@@ -7,13 +7,13 @@
 # Player
 # - スニーク時間[tick]
 # @public
-scoreboard objectives add SneakTime custom:sneak_time
+scoreboard objectives add SneakTime dummy
 
 #> 
 # Player 
-# - 走行距離[cm]
+# - 走行時間[cm]
 # @public
-scoreboard objectives add SprintDistance custom:sprint_one_cm
+scoreboard objectives add SprintDistance dummy
 
 #> 
 # Setting

@@ -4,10 +4,10 @@
 advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item
 
 # エフェクト
-    execute if entity @e[type=item,nbt={Item:{tag:{Type:glow}}}] run function akarin_pvp:core/hueoni/item/glow_powder/effect
+    execute if entity @e[type=item,nbt={Item:{tag:{ASP:{Type:glow}}}}] run function akarin_pvp:core/hueoni/item/glow_powder/effect
 
 # kill
-    execute as @e[type=item] if data entity @s {Item:{tag:{Type:glow}}} run kill @s
+    execute as @e[type=item] if data entity @s {Item:{tag:{ASP:{Type:glow}}}} run kill @s
 
 # 同時使用
     execute if score @s PvP.Used.GlowPowder matches 2.. run function akarin_pvp:core/hueoni/item/glow_powder/return_item

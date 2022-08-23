@@ -4,7 +4,7 @@
             "trigger": "minecraft:used_totem",
             "conditions": {
                 "item": {
-                    "nbt": "{Type:give_chance}"
+                    "nbt": "{ASP:{Type:give_chance}}"
                 }
             }
         }

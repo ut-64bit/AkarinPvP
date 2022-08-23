@@ -25,13 +25,13 @@
     execute if entity @s[tag=Assassin] at @s if data entity @s SelectedItem{id:"minecraft:iron_sword"} if entity @a[team=Pink,distance=..2] run effect give @s strength 4 9 true
 
 # ハイダー
-    execute if entity @s[tag=Hider] if score @s SneakTime matches 60.. if entity @e[tag=Temp.PosCheck,distance=..0.05] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17b,Amplifier:8b,Duration:2,ShowParticles:0b}]}
+    execute if entity @s[tag=Hider] if score @s SneakTime matches 60.. unless entity @s[tag=Move] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17b,Amplifier:8b,Duration:2,ShowParticles:0b}]}
 
 # マグロ
-    execute if entity @s[tag=Maguro] if entity @e[tag=Temp.PosCheck,distance=..0.1] run scoreboard players add @s PvP.Break 1
-    execute if entity @s[tag=Maguro] if entity @e[tag=Temp.PosCheck,distance=..0.1] run playsound block.note_block.bell player @s ~ ~ ~ 1 1.1
-    execute if entity @s[tag=Maguro] unless entity @e[tag=Temp.PosCheck,distance=..0.1] run scoreboard players set @s PvP.Break 0
-    execute if entity @s[tag=Maguro] if entity @e[tag=Temp.PosCheck,distance=..0.1] if score @s PvP.Break matches 60.. run function akarin_pvp:core/hueoni/main/maguro
+    execute if entity @s[tag=Maguro] unless entity @s[tag=Move] run scoreboard players add @s PvP.Break 1
+    execute if entity @s[tag=Maguro] unless entity @s[tag=Move] run playsound block.note_block.bell player @s ~ ~ ~ 1 1.1
+    execute if entity @s[tag=Maguro] if entity @s[tag=Move] run scoreboard players set @s PvP.Break 0
+    execute if entity @s[tag=Maguro] unless entity @s[tag=Move] if score @s PvP.Break matches 60.. run function akarin_pvp:core/hueoni/main/maguro
 
 # 発光
     execute if score $timer PvP.Timer matches ..30 if entity @s[team=Pink] run effect give @s glowing 2 0 false

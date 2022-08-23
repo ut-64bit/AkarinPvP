@@ -7,4 +7,4 @@ clear @s knowledge_book
 give @s totem_of_undying{ASP:{Type:"give_chance"},display:{Name:'{"text":"与えられた猶予","color":"yellow","bold":true,"italic":true}',Lore:['{"text":"1回切られても死なず足が速くなる","color":"light_purple","bold":true}']}} 1
 
 recipe take @s akarin_pvp:totem
-advancement revoke @s only akarin_pvp:carft/totem
+advancement revoke @s only akarin_pvp:craft/totem
