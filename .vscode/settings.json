@@ -1,0 +1,87 @@
+{
+    "mcdutil.createDatapackTemplate.customTemplate": [
+        {
+            "label": "Item",
+            "picked": true,
+            "generates": [
+                {
+                    "type": "file",
+                    "rel": "data/asset/functions/item/%namespace%/use.mcfunction",
+                    "content": [
+                        "#> asset:item/%namespace%/use",
+                        "# @within advancement asset:item/%namespace%",
+                        "",
+                        "advancement grant @s only akarin_pvp:pvp_adv/hueoni/check/used/special_item",
+                        "",
+                        "# 使用処理",
+                        "    execute if entity @e[type=item,nbt={Item:{tag:{ASP:{Type:%ItemTag%}}}},sort=nearest,limit=1] run function asset:item/%namespace%/action",
+                        "",
+                        "# kill",
+                        "    execute as @e[type=item,sort=nearest,limit=1] if data entity @s {Item:{tag:{ASP:{Type:%ItemTag%}}}} run kill @s",
+                        "",
+                        "# 同時使用",
+                        "    execute if score @s PvP.Used.%ItemName% matches 2.. run function asset:item/%namespace%/return_item",
+                        "",
+                        "# 再使用処理",
+                        "    scoreboard players set @s PvP.Used.%ItemName% 0",
+                        "    advancement revoke @s only asset:item/%namespace%"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "rel": "data/asset/functions/item/%namespace%/action.mcfunction",
+                    "content": [
+                        "#> asset:item/%namespace%/action",
+                        "# @within function asset:item/%namespace%/use"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "rel": "data/asset/functions/item/%namespace%/return_item.mcfunction",
+                    "content": [
+                        "#> asset:item/%namespace%/return_item",
+                        "# @within function asset:item/%namespace%/*",
+                        "",
+                        "# スコア減らす",
+                        "    scoreboard players remove @s PvP.Used.%ItemName% 1",
+                        "",
+                        "# アイテム渡す",
+                        "    loot give @s loot asset:item/%namespace%",
+                        "# 再起",
+                        "    execute if score @s PvP.Used.%ItemName% matches 2.. run function asset:item/%namespace%/return_item"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "rel": "data/asset/functions/item/%namespace%/load.mcfunction",
+                    "content": [
+                        "#> asset:item/%namespace%/load",
+                        "# @within function akarin_pvp:load",
+                        "",
+                        "#> ",
+                        "# Player",
+                        "# ____",
+                        "# %ItemName% の使用判定",
+                        "# @internal",
+                        "scoreboard objectives add PvP.Used.%ItemName% dropped:%BaseItem%"
+                    ]
+                }
+            ],
+            "customQuestion": [
+                {
+                    "name": "ItemName",
+                    "question": "Itemの名前",
+                    "pattern": "([A-Z\\d]+[a-z\\d]*(-[a-z\\d]+)*)+"
+                },
+                {
+                    "name": "ItemTag",
+                    "question": "Itemごとに当てられるnbt"
+                },
+                {
+                    "name": "BaseItem",
+                    "question": "ベースのItem"
+                }
+            ]
+        }
+    ]
+}

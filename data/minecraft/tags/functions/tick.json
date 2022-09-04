@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
-        "akarin_pvp:tick"
+        "akarin_pvp:tick",
+        "lib:system/tick"
     ]
 }

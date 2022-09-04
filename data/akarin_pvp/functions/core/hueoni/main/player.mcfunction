@@ -6,6 +6,7 @@
 
 # 逃走者
     execute if entity @s[team=Pink] run function #akarin_pvp:stamina
+    execute if entity @s[team=Pink] if predicate lib:effect/glowing run particle glow
     execute store result score @s PvP.HealthPlus run data get entity @s AbsorptionAmount 0.2
     execute if score @s PvP.HealthPlus matches 1.. run particle dust 1 1 0 1 ~1 ~ ~ 0 0 0 0 1 normal @a
     execute if score @s PvP.HealthPlus matches 2.. run particle dust 1 1 0 1 ~ ~ ~1 0 0 0 0 1 normal @a
@@ -21,11 +22,11 @@
     execute if entity @s[tag=Stalker] at @s anchored eyes positioned ^ ^ ^ facing entity @a[team=Pink,distance=..30] eyes rotated ~ 0 run particle minecraft:flame ^ ^-0.5 ^1 0 0 0 0 1 normal @s
 
 # アサシン
-    execute if entity @s[tag=Assassin] unless data entity @s SelectedItem if predicate lib:flag/sneaking at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:1b,Amplifier:8b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b}]}
+    execute if entity @s[tag=Assassin] unless data entity @s SelectedItem if predicate lib:flag/sneaking at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:1,Amplifier:8,Duration:2,ShowParticles:0b},{Id:14,Amplifier:0,Duration:2,ShowParticles:1b}]}
     execute if entity @s[tag=Assassin] at @s if data entity @s SelectedItem{id:"minecraft:iron_sword"} if entity @a[team=Pink,distance=..2] run effect give @s strength 4 9 true
 
 # ハイダー
-    execute if entity @s[tag=Hider] if score @s SneakTime matches 60.. unless entity @s[tag=Move] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2b,Amplifier:10b,Duration:2,ShowParticles:0b},{Id:8b,Amplifier:-128b,Duration:2,ShowParticles:0b},{Id:14b,Amplifier:0b,Duration:2,ShowParticles:1b},{Id:17b,Amplifier:8b,Duration:2,ShowParticles:0b}]}
+    execute if entity @s[tag=Hider] if score @s SneakTime matches 60.. unless entity @s[tag=Move] unless data entity @s SelectedItem at @s run summon area_effect_cloud ~ ~ ~ {Radius:0f,Duration:6,Age:4,Effects:[{Id:2,Amplifier:10,Duration:2,ShowParticles:0b},{Id:8,Amplifier:-128,Duration:2,ShowParticles:0b},{Id:14,Amplifier:0,Duration:2,ShowParticles:1b},{Id:17,Amplifier:8,Duration:2,ShowParticles:0b}]}
 
 # マグロ
     execute if entity @s[tag=Maguro] unless entity @s[tag=Move] run scoreboard players add @s PvP.Break 1
