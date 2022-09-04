@@ -8,7 +8,7 @@
             "color": "gold"
         },
         "description": {
-            "text": ""
+            "text": "v2.2.5"
         },
         "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
         "frame": "task",
