@@ -6,7 +6,7 @@
 
 # 逃走者
     execute if entity @s[team=Pink] run function #akarin_pvp:stamina
-    execute if entity @s[team=Pink] if predicate lib:effect/glowing run particle glow
+    execute if entity @s[team=Pink] if predicate lib:effect/glowing run particle dust 1.000 1.000 0.000 1 ~ ~1 ~ 0.3 0.5 0.3 1 1 normal
     execute store result score @s PvP.HealthPlus run data get entity @s AbsorptionAmount 0.2
     execute if score @s PvP.HealthPlus matches 1.. run particle dust 1 1 0 1 ~1 ~ ~ 0 0 0 0 1 normal @a
     execute if score @s PvP.HealthPlus matches 2.. run particle dust 1 1 0 1 ~ ~ ~1 0 0 0 0 1 normal @a
