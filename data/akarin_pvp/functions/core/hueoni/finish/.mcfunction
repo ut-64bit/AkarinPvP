@@ -19,6 +19,9 @@
 
 # スコア
     execute as @a if score @s PvP.Playing matches 2 run function akarin_pvp:core/hueoni/finish/players
-    execute as @a if score @s PvP.Playing matches 2 run scoreboard players set * PvP.Playing -2
+    scoreboard players set * PvP.Playing -1
+    execute as @a run scoreboard players reset @s PvP.Playing
     scoreboard players reset $Global PvP.Playing
     scoreboard players reset $if.Finish PvP.Temp
+
+    scoreboard players add @s GamePlayCount 1

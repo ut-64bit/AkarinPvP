@@ -17,7 +17,7 @@
         execute as @a[team=Green] run function akarin_pvp:core/hueoni/team/green/jobs/
 
     ## 終了
-        execute as @a if score @s PvP.Playing matches -2 run function akarin_pvp:core/hueoni/finish/players
+        execute as @a if score @s PvP.Playing matches -1 run function akarin_pvp:core/global/finish/player
 
     ## メイン処理
         execute if score $Global PvP.Playing matches 2 run function akarin_pvp:core/hueoni/main/

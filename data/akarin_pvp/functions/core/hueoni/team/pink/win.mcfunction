@@ -7,6 +7,7 @@ execute as @a if score @s PvP.Playing matches 2 run title @s title {"text":"逃�
 execute as @a if score @s PvP.Playing matches 2 run tellraw @s ["GM > 逃走成功者は ",{"selector":"@a[team=Pink]"}," さんです"]
 
 # 逃走者勝利
+    execute as @a if score @s PvP.Playing matches 2 if entity @s[team=Pink] run scoreboard players add @s GameWinCount 1
     execute as @a if score @s PvP.Playing matches 2 if entity @s[tag=People,advancements={akarin_pvp:pvp_adv/hueoni/win/people=false}] run advancement grant @s only akarin_pvp:pvp_adv/hueoni/win/people
     execute as @a if score @s PvP.Playing matches 2 if entity @s[tag=Esper,advancements={akarin_pvp:pvp_adv/hueoni/win/esper=false}] run advancement grant @s only akarin_pvp:pvp_adv/hueoni/win/esper
     execute as @a if score @s PvP.Playing matches 2 if entity @s[tag=Panya,advancements={akarin_pvp:pvp_adv/hueoni/win/panya=false}] run advancement grant @s only akarin_pvp:pvp_adv/hueoni/win/panya
